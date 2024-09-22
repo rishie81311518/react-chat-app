@@ -18,7 +18,7 @@ useEffect(() => {
 
   return <div className="flex h-[100vh] text-white overflow-hidden">
     <ContactsContainer/>
-    <EmptyChatContainer/>
+    {/* <EmptyChatContainer/> */}
     <ChatContainer/>
   </div>;
 };
