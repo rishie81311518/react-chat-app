@@ -70,7 +70,7 @@ const NewDM = () => {
         </Tooltip>
       </TooltipProvider>
       <Dialog open={openNewContactModal} onOpenChange={setOpenNewContactModal}>
-        <DialogContent className="bg-[#181920] border-none text-white w-[400px] h-[400px] flex flex-col">
+        <DialogContent className="bg-[#181920] border-none text-white w-[400px] h-[400px] flex flex-col ">
           <DialogHeader>
             <DialogTitle> Please select a contact</DialogTitle>
             <DialogDescription></DialogDescription>
@@ -82,6 +82,7 @@ const NewDM = () => {
               onChange={(e) => searchContacts(e.target.value)}
             />
           </div>
+          {searchedContacts.length > 0 &&  (
           <ScrollArea className="h-[250px]">
             <div className="flex flex-col gap-5">
               {searchedContacts.map((contact) => (
@@ -123,8 +124,9 @@ const NewDM = () => {
               ))}
             </div>
           </ScrollArea>
+          )}
           {searchedContacts.length <= 0 && (
-            <div className="flex-1 md:bg-[#1c1d25] md:flex mt-5 flex-col justify-center items-center duration-1000 transition-all">
+            <div className="flex-1 md:flex mt-5 md:mt-0 flex-col justify-center items-center duration-1000 transition-all">
               <Lottie
                 isClickToPauseDisabled={true}
                 height={100}
